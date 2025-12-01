@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Harishmaran | Embedded Systems Engineer</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <!-- Custom Cursor Removed -->
+
+    <div id="loader"></div>
+    <canvas id="bg"></canvas>
+
+    <!-- Floating Pill Navigation -->
+    <nav>
+        <div class="logo">HM<span>.</span></div>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <div class="nav-right" style="display: flex; align-items: center; gap: 1rem;">
+            <div class="theme-toggle">
+                <input type="checkbox" id="theme-switch">
+                <label for="theme-switch">
+                    <i class="fas fa-moon icon-moon"></i>
+                    <i class="fas fa-sun icon-sun"></i>
+                </label>
+            </div>
+            <div class="hamburger">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <header id="home">
+            <div class="hero-badge">Available for work</div>
+            <h1>Harishmaran<br><span class="gradient-text">Embedded & IoT</span></h1>
+            <p>Embedded Systems Engineer – IoT & Robotics Specialist</p>
+            <div class="hero-btns">
+                <a href="#projects" class="btn">View Work</a>
+                <a href="#contact" class="btn outline">Contact Me</a>
+            </div>
+        </header>
+
+        <section id="about" class="left">
+            <h2>About Me</h2>
+            <p>
+                Motivated and detail-oriented Embedded Systems Engineer with one year of hands-on experience at NTCPWC-
+                IIT Madras.
+                Proven ability to design, develop, and test microcontroller-based systems, IoT solutions, and robotics
+                platforms.
+                Strong foundation in hardware interfacing, PCB design, real-time systems, and sensor integration.
+                Eager to apply cutting-edge technology in solving real-world challenges in Embedded, IoT, and Robotics
+                domains.
+            </p>
+        </section>
+
+        <section id="experience" class="right">
+            <h2>Experience</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <span class="date">Oct 2024 – Present</span>
+                    <h3>Embedded Systems & IoT Engineer</h3>
+                    <h4>National Technology Centre for Ports, Waterways and Coasts (NTCPWC), IIT Madras</h4>
+                    <ul>
+                        <li>Developed vision-based and LIDAR-enabled autonomous systems for robotics applications.</li>
+                        <li>Built IoT-enabled hardware for real-time monitoring and automation in research setups.</li>
+                        <li>Integrated face recognition and voice assistant modules for smart robot interaction.</li>
+                        <li>Designed, debugged, and deployed embedded hardware prototypes for project testing.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="left">
+            <h2>Projects</h2>
+            <div class="project-grid">
+                <div class="project-card">
+                    <h3>Saagar – Autonomous Service Robot</h3>
+                    <p>Designed and implemented a smart indoor robot featuring autonomous navigation, face recognition,
+                        and voice-based interaction. Integrated camera and LIDAR sensors for obstacle detection and path
+                        planning. Enabled wake-word activation and AI chatbot responses using Picovoice and Google
+                        Gemini API.</p>
+                </div>
+                <div class="project-card">
+                    <h3>Advanced Safety Head Shield</h3>
+                    <p>Smart helmet using Arduino with accident detection and emergency alerts for rider protection.</p>
+                </div>
+                <div class="project-card">
+                    <h3>Artificial Bipedal Prosthetic Robot</h3>
+                    <p>Built a robotic leg system mimicking bipedal motion to assist leg-disabled individuals.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills" class="right">
+            <h2>Skills</h2>
+            <div class="skills-container">
+                <div class="skill-category">
+                    <h3>Embedded Systems</h3>
+                    <p>Arduino, ESP32, NodeMCU, PIC16F877A, Raspberry Pi, STM32</p>
+                </div>
+                <div class="skill-category">
+                    <h3>Programming & Tools</h3>
+                    <p>C, Python, MATLAB/Simulink, Arduino IDE, KiCad, Proteus, AutoCAD</p>
+                </div>
+                <div class="skill-category">
+                    <h3>Protocols</h3>
+                    <p>I2C, SPI, UART, MQTT</p>
+                </div>
+                <div class="skill-category">
+                    <h3>Robotics & IoT</h3>
+                    <p>ROS2, Motor Control, Obstacle Avoidance, Sensor Interfacing, Wireless Comm, Cloud Integration</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="left">
+            <h2>Contact</h2>
+            <div class="contact-card">
+                <p>Get in touch for collaborations.</p>
+                <div class="contact-links">
+                    <a href="mailto:harishmaran55@gmail.com" class="btn"><i class="fas fa-envelope"></i>
+                        harishmaran55@gmail.com</a>
+                    <a href="tel:9042360486" class="btn"><i class="fas fa-phone"></i> +91 9042360486</a>
+                    <a href="https://www.linkedin.com/in/harishmaran-m" target="_blank" class="btn"><i
+                            class="fab fa-linkedin"></i> LinkedIn</a>
+                </div>
+                <br>
+                <p class="location">Kelambakkam, Chennai-603103</p>
+            </div>
+        </section>
+
+
+        <blockquote>
+            <p>"Innovation distinguishes between a leader and a follower."</p>
+        </blockquote>
+    </main>
+
+    <!-- Import Map for Three.js -->
+    <script type="importmap">
+        {
+            "imports": {
+                "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
+                "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/"
+            }
+        }
+    </script>
+
+    <script type="module" src="main.js"></script>
+</body>
+
+</html>
