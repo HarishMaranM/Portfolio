@@ -264,6 +264,13 @@ header {
     -webkit-text-fill-color: transparent;
 }
 
+.gradient-text-red {
+    background: linear-gradient(135deg, #ff0000, #cd0505b3);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
 header p {
     font-size: 1.25rem;
     color: var(--text-muted);
