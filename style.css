@@ -265,7 +265,7 @@ header {
 }
 
 .gradient-text-red {
-    background: linear-gradient(135deg, #ff0000, #cd0505b3);
+    background: linear-gradient(135deg, #cd0505b3, #a44343f9);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
