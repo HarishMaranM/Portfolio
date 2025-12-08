@@ -447,3 +447,100 @@ cards.forEach(card => {
         card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) scale3d(1, 1, 1)';
     });
 });
+
+// --- 5-Project Auto-Carousel Logic (Seamless Loop) ---
+const trackfull = document.querySelector('.carousel-track-full');
+if (trackfull) {
+    let slides = Array.from(trackfull.children);
+    const intervalTime = 4000; // 4 seconds
+    let carouselInterval;
+    let isTransitioning = false;
+
+    const getVisibleCount = () => {
+        if (window.innerWidth <= 768) return 1;
+        if (window.innerWidth <= 1024) return 2;
+        return 3;
+    };
+
+    const nextSlide = () => {
+        if (isTransitioning) return;
+        isTransitioning = true;
+
+        const visibleCount = getVisibleCount();
+        const slideWidthPct = 100 / visibleCount;
+
+        trackfull.style.transition = 'transform 0.5s ease-in-out';
+        trackfull.style.transform = `translateX(-${slideWidthPct}%)`;
+
+        setTimeout(() => {
+            trackfull.style.transition = 'none';
+            trackfull.appendChild(trackfull.firstElementChild);
+            trackfull.style.transform = 'translateX(0)';
+
+            // Re-sync array if needed, but DOM order dictates display
+
+            setTimeout(() => {
+                isTransitioning = false;
+            }, 50);
+        }, 500); // Match CSS transition duration
+    };
+
+    const prevSlide = () => {
+        if (isTransitioning) return;
+        isTransitioning = true;
+
+        const visibleCount = getVisibleCount();
+        const slideWidthPct = 100 / visibleCount;
+
+        // Move last item to start immediately without transition
+        trackfull.style.transition = 'none';
+        trackfull.insertBefore(trackfull.lastElementChild, trackfull.firstElementChild);
+        trackfull.style.transform = `translateX(-${slideWidthPct}%)`;
+
+        setTimeout(() => {
+            trackfull.style.transition = 'transform 0.5s ease-in-out';
+            trackfull.style.transform = 'translateX(0)';
+
+            setTimeout(() => {
+                isTransitioning = false;
+            }, 500);
+        }, 50);
+    };
+
+    // Auto Play
+    const startInterval = () => {
+        carouselInterval = setInterval(nextSlide, intervalTime);
+    };
+
+    const resetInterval = () => {
+        clearInterval(carouselInterval);
+        startInterval();
+    };
+
+    // Event Listeners
+    document.querySelector('.next-btn')?.addEventListener('click', () => {
+        nextSlide();
+        resetInterval();
+    });
+
+    document.querySelector('.prev-btn')?.addEventListener('click', () => {
+        prevSlide();
+        resetInterval();
+    });
+
+    // Pause on hover
+    document.querySelector('.carousel-container-full')?.addEventListener('mouseenter', () => {
+        clearInterval(carouselInterval);
+    });
+
+    document.querySelector('.carousel-container-full')?.addEventListener('mouseleave', () => {
+        startInterval();
+    });
+
+    // Start
+    startInterval();
+
+    // Hide indicators since they don't map well to infinite DOM shuffling without complexity
+    const indContainer = document.querySelector('.carousel-indicators');
+    if (indContainer) indContainer.style.display = 'none';
+}

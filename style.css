@@ -618,7 +618,151 @@ blockquote {
     box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
 }
 
+
 .project-card:hover .project-img {
     transform: scale(1.05);
     transition: transform 0.3s ease;
+}
+
+/* --- Navigation Buttons (Base Styles) --- */
+.carousel-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(15, 23, 42, 0.8);
+    /* Dark background */
+    border: 1px solid var(--primary);
+    /* Primary border */
+    color: var(--primary);
+    width: 50px;
+    /* Larger size */
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 100;
+    /* Ensure on top */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(5px);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+    font-size: 1.2rem;
+}
+
+.carousel-btn:hover {
+    background: var(--primary);
+    color: var(--bg-color);
+    box-shadow: 0 0 20px var(--primary);
+    transform: translateY(-50%) scale(1.1);
+}
+
+.prev-btn {
+    left: 0;
+    /* Align to left edge of container padding */
+}
+
+.next-btn {
+    right: 0;
+    /* Align to right edge */
+}
+
+
+/* --- 5-Item Carousel Styles --- */
+.carousel-container-full {
+    position: relative;
+    width: 100%;
+    max-width: 1400px;
+    /* Wider to fit 3 items comfortably */
+    margin: 4rem auto 0;
+    padding: 0 3rem;
+    /* Space for buttons */
+}
+
+.carousel-track-viewport {
+    overflow: hidden;
+    width: 100%;
+}
+
+.carousel-track-full {
+    display: flex;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    transition: transform 0.5s ease-in-out;
+    width: 100%;
+}
+
+.carousel-slide-item {
+    min-width: 33.333%;
+    /* 3 items visible */
+    padding: 0 1rem;
+    /* Gap between items */
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+}
+
+.carousel-slide-item .project-card {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    /* Ensure card looks good */
+    display: flex;
+    flex-direction: column;
+}
+
+/* Indicators */
+.carousel-indicators {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 1.5rem;
+}
+
+.indicator {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--card-border);
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.indicator.active {
+    background: var(--primary);
+    transform: scale(1.2);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .carousel-slide-item {
+        min-width: 50%;
+        /* 2 items visible */
+    }
+}
+
+@media (max-width: 768px) {
+    .carousel-slide-item {
+        min-width: 100%;
+        /* 1 item visible */
+    }
+
+    .carousel-container-full {
+        padding: 0 1rem;
+    }
+
+    .carousel-btn {
+        width: 30px;
+        height: 30px;
+        font-size: 0.8rem;
+    }
+
+    .prev-btn {
+        left: -10px;
+    }
+
+    .next-btn {
+        right: -10px;
+    }
 }
